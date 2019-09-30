@@ -32,6 +32,10 @@ export class AppComponent {
                 private splashScreen: SplashScreen,
                 private statusBar: StatusBar) {
         this.initializeApp();
+        platform.backButton.subscribe(() => {
+            console.log('back pressed');
+            window.history.back();
+        });
         // window.location.href = 'https://samin005.github.io/Store-AF/Sugarlock';
     }
 
